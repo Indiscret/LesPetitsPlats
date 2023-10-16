@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #e5e5e5;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+}
+
+.logo_header {
+    margin: 20px 0 20px 70px;
+    display: flex;
+    align-items: end;
+}
+
+.logo {
+    width: 200px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    margin-left: 10px;
+}
+
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("../assets/images/header-background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 667px;
+    width: 100%;
+}
+
+.banner_text {
+    text-align: center;
+    width: 50%;
+    padding: 10px 20px;
+    color: #FFD15B;
+    font-family: 'anton', sans-serif;
+    font-size: 44px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.label_search {
+    display: flex;
+    width: 65%;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+    height: 72px;
+}
+
+#search {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.icon_search {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1b1b1b;
+}
+
+.icon_search i {
+    color: white;
+    scale: 2;
+}
+
+#filters_labels_container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.filters_container,
+.labels_container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 40px;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 40%;
+}
+
+.total_recipes {
+    position: relative;
+    right: 10px;
+    padding-top: 30px;
+    font-family: 'Anton';
+    font-size: 21px;
+
+}
+
+.dropdown,
+.labels {
+    display: flex;
+    border: none;
+    width: 150px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+}
+
+.labels {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #FFD15B;
+    padding: 15px;
+    width: 150px;
+}
+
+.labels i::before {
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    scale: 1.5;
+}
+
+.dropdown,
+#text,
+.labels,
+#text {
+    font-family: "Manrope";
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.dropdown i::before {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    ;
+}
+
+
+#recipes_card_container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.recipes_card {
+    position: relative;
+    margin: 50px 0;
+    width: 28%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.cooking_time {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    background-color: #FFD15B;
+    padding: 7.5px 15px;
+    border-radius: 15px;
+}
+
+.recipes_card_picture {
+    width: 100%;
+    height: 280px;
+}
+
+.recipes_picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipes_info {
+    padding: 10px;
+    background-color: white;
+}
+
+.recipes_name {
+    margin: 15px 0;
+    font-family: 'anton', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+.recipe,
+.ingredients {
+    font-size: 12px;
+    color: #7a7a7a;
+    text-transform: uppercase;
+    letter-spacing: 1.44px;
+}
+
+.recipes_desc {
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.ingredients_list_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.ingredients_list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 45%;
+    margin: 10px 5px;
+}
+
+.ingredient_name {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.quantity {
+    font-size: 1rem;
+    color: #7a7a7a;
+}
