@@ -170,6 +170,7 @@ header {
     width: 28%;
     overflow: hidden;
     border-radius: 20px;
+    background-color: white;
 }
 
 .cooking_time {
@@ -184,6 +185,8 @@ header {
 .recipes_card_picture {
     width: 100%;
     height: 280px;
+    border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
 }
 
 .recipes_picture {
@@ -194,7 +197,6 @@ header {
 
 .recipes_info {
     padding: 10px;
-    background-color: white;
 }
 
 .recipes_name {
@@ -218,7 +220,7 @@ header {
     margin: 20px 0;
 }
 
-.ingredients_list_content {
+.ingredients_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: start;

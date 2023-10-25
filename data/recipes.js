@@ -1,4 +1,4 @@
-const recipes = [
+ [
     {
         "id": 1,
         "image": "Recette01.jpg",
@@ -123,7 +123,8 @@ const recipes = [
                 "ingredient": "Thon en miettes",
                 "quantity": 200,
                 "unit": "grammes"
-            },{
+            },
+            {
                 "ingredient": "Tomate",
                 "quantity": 2
             },
