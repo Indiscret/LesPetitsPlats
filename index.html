@@ -25,16 +25,33 @@
             <section id="filters_labels_container">
                 <div class="filters_container">
                     <div class="filters">
-                        <button class="dropdown">Ingredients<i class="fa-solid fa-chevron-down"></i></button>
-                        <button class="dropdown">Appareils<i class="fa-solid fa-chevron-down"></i></button>
-                        <button class="dropdown">Ustensile<i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="dropdown_wrapper">
+                            <button class="dropdown">Ingredients<i class="fa-solid fa-chevron-down"></i></button>
+                            <div class="dropdown_list_container">
+                                <input type="text" name="ingredients" id="ingredients_search" class="dropdown_search" placeholder="rechercher">
+                                <ul id="ingredients_container" class="dropdown_list"></ul>
+                            </div>
+                        </div>
+                        <div class="dropdown_wrapper">
+                            <button class="dropdown">Appareils<i class="fa-solid fa-chevron-down"></i></button>
+                           <div class="dropdown_list_container">
+                            <input type="text" name="appliances" id="appliances_search" class="dropdown_search" placeholder="rechercher">
+                            <ul id="appliances_container" class="dropdown_list"></ul>
+                           </div>
+                        </div>
+                         <div class="dropdown_wrapper">
+                            <button class="dropdown">Ustensiles<i class="fa-solid fa-chevron-down"></i></button>
+                            <div class="dropdown_list_container">
+                                <input type="text" name="Ustensils" id="Ustensils_search" class="dropdown_search" placeholder="rechercher">
+                                <ul id="ustensils_container" class="dropdown_list"></ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="total_recipes">
-                        <span class="number">50</span> Recettes
+                        <span id="number">50</span> Recettes
                     </div>
                 </div>
                     <div class="labels_container">
-                        <div class="labels">coco <i class="fa-solid fa-xmark"></i></div>
                 </div>
             </section>
             <section id="recipes_card_container">

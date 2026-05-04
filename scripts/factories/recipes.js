@@ -49,9 +49,9 @@ function recipesFactory(data) {
             const ingredientName = document.createElement("h4");
             ingredientName.textContent = ingredient.ingredient;
             ingredientName.classList.add("ingredient_name");
-    
+
             const ingredientQty = document.createElement("p");
-            ingredientQty.textContent = `${ingredient.quantity} ${ingredient.unit || ''}`;
+            ingredientQty.textContent = `${ingredient.quantity || ''} ${ingredient.unit || ''}`;
             ingredientQty.classList.add("quantity");
 
             ingredientsContainer.appendChild(ingredientsList);

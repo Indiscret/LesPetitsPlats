@@ -43,6 +43,7 @@ header {
     background-image: url("../assets/images/header-background.png");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     height: 667px;
     width: 100%;
 }
@@ -105,13 +106,13 @@ header {
     width: 40%;
 }
 
+
 .total_recipes {
     position: relative;
     right: 10px;
     padding-top: 30px;
     font-family: 'Anton';
     font-size: 21px;
-
 }
 
 .dropdown,
@@ -123,6 +124,48 @@ header {
     background-color: white;
     border-radius: 10px;
     position: relative;
+}
+
+.dropdown_wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown_list_container {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.dropdown_list_container.open {
+    display: block;
+}
+
+.dropdown_list {
+    max-height: 200px;
+    overflow-y: auto;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.dropdown_list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown_list li:hover {
+    background-color: #FFD15B;
+}
+
+.selected_filter {
+    background-color: #FFD15B;
+    font-weight: bold;
 }
 
 .labels {
