@@ -239,6 +239,34 @@ function initDropdowns() {
     });
 }
 
+function initSearchClearButton() {
+    const searchInputs = document.querySelectorAll("#search, .dropdown_search");
+
+    searchInputs.forEach((input) => {
+        const wrapper = input.closest(".search_input_wrapper, .dropdown_input_wrapper");
+        const clearBtn = wrapper.querySelector(".icon_clear");
+
+        if (!clearBtn) return;
+
+        input.addEventListener("input", () => {
+            if (input.value.trim().length > 0) {
+                clearBtn.style.display = "flex";
+            } else {
+                clearBtn.style.display = "none";
+            }
+        });
+
+        clearBtn.addEventListener("click", () => {
+            input.value = "";
+            clearBtn.style.display = "none";
+            input.focus();
+
+            applyFilters();
+
+        });
+    })
+}
+
 // Recherche dans la liste des filtres avancés
 function initDropdownFilterSearch() {
     const dropdownSearchInputs = document.querySelectorAll(".dropdown_search");
@@ -359,6 +387,7 @@ async function init() {
     displayData(data);
     initDropdowns();
     initDropdownFilterSearch();
+    initSearchClearButton();
 
     const searchInput = document.getElementById("search");
     searchInput.addEventListener("input", () => {

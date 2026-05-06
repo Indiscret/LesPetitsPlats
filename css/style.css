@@ -61,17 +61,25 @@ header {
 
 .label_search {
     display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.search_input_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: 65%;
-    border-radius: 10px;
-    padding: 5px;
-    background-color: white;
     height: 72px;
+    padding: 0 15px;
+    background-color: #fff;
+    border-radius: 10px;
 }
 
 #search {
-    height: 100%;
     width: 100%;
     border: none;
+    outline: none;
 }
 
 .icon_search {
@@ -80,55 +88,81 @@ header {
     background-color: #1b1b1b;
 }
 
+.icon_search_clear {
+    cursor: pointer;
+    color: #7a7a7a;
+    font-size: 30px;
+    display: none;
+}
+
 .icon_search i {
     color: white;
     scale: 2;
 }
 
+.layout_wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+    width: 100%;
+}
+
 #filters_labels_container {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 0;
 }
 
-.filters_container,
-.labels_container {
+.filters_container {
     display: flex;
     justify-content: space-between;
-    margin: 0 40px;
+    align-items: center;
 }
 
 .filters {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    width: 40%;
+    gap: 70px;
 }
 
 
 .total_recipes {
-    position: relative;
-    right: 10px;
-    padding-top: 30px;
     font-family: 'Anton';
     font-size: 21px;
 }
 
-.dropdown,
-.labels {
+.dropdown {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     border: none;
     width: 150px;
     padding: 15px;
     background-color: white;
     border-radius: 10px;
     position: relative;
+    cursor: pointer;
+}
+
+.dropdown i {
+    transition: transform 0.2s ease;
+}
+
+.dropdown.active i {
+    transform: rotate(180deg);
 }
 
 .dropdown_wrapper {
     position: relative;
     display: inline-block;
+}
+
+.dropdown_input_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
 }
 
 .dropdown.active {
@@ -137,9 +171,22 @@ header {
 }
 
 .dropdown_search {
-    height: 100%;
     width: 100%;
     border: none;
+    outline: none;
+    padding: 8px 0;
+}
+
+.icon_dropdown, .icon_dropdown_clear {
+    color: #7a7a7a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon_dropdown_clear {
+    cursor: pointer;
+    display: none;
 }
 
 .dropdown_list_container {
@@ -179,20 +226,29 @@ header {
     font-weight: bold;
 }
 
-.labels {
+.labels_container {
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
     align-items: center;
-    background-color: #FFD15B;
-    padding: 15px;
-    width: 150px;
+    justify-content: flex-start;
+    margin-top: 20px;
 }
 
-.labels i::before {
-    position: absolute;
-    top: 18px;
-    right: 15px;
-    scale: 1.5;
+.labels {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    gap: 10px;
+    background-color: #FFD15B;
+    padding: 15px;
+    width: auto;
+}
+
+.labels i {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .dropdown,
@@ -204,24 +260,17 @@ header {
     font-size: 16px;
 }
 
-.dropdown i::before {
-    position: absolute;
-    top: 18px;
-    right: 10px;
-    ;
-}
-
-
 #recipes_card_container {
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
 }
 
 .recipes_card {
     position: relative;
     margin: 50px 0;
-    width: 28%;
+    max-width: 32%;
     overflow: hidden;
     border-radius: 20px;
     background-color: white;

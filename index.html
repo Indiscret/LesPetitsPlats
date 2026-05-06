@@ -1,48 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://kit.fontawesome.com/48b727ac1d.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="css/style.css">
-        <title>Les petits plats</title>
-    </head>
-    <body>
-        <header>
-            <h1 class="logo_header"><img class="logo" src="./assets/images/svg/logo-text.svg"
-                    alt="Logo du site les petits plats">
-                <img class="icon" src="./assets/images/svg/logo-icon.svg" alt="Icon du site les petits plats">
-            </h1>
-        </header>
-        <main>
-            <section id="banner">
-                <h2 class="banner_text">cherchez parmi plus de 1500 recettes du quotidien,simples et délicieuses</h2>
-                <div class="label_search">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/48b727ac1d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Les petits plats</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo_header"><img class="logo" src="./assets/images/svg/logo-text.svg"
+                alt="Logo du site les petits plats">
+            <img class="icon" src="./assets/images/svg/logo-icon.svg" alt="Icon du site les petits plats">
+        </h1>
+    </header>
+    <main>
+        <section id="banner">
+            <h2 class="banner_text">cherchez parmi plus de 1500 recettes du quotidien,simples et délicieuses</h2>
+            <div class="label_search">
+                <div class="search_input_wrapper">
                     <input type="text" name="search" id="search" placeholder="rechercher une recette, un ingrédient...">
+                    <span class="icon_search_clear icon_clear"><i class="fa-solid fa-xmark"></i></span>
                     <span class="icon_search"><i class="fa-solid fa-magnifying-glass"></i></span>
                 </div>
-            </section>
-            <section id="filters_labels_container">
+            </div>
+        </section>
+        <div class="layout_wrapper">
+        <section id="filters_labels_container">
                 <div class="filters_container">
                     <div class="filters">
                         <div class="dropdown_wrapper">
                             <button class="dropdown">Ingredients<i class="fa-solid fa-chevron-down"></i></button>
                             <div class="dropdown_list_container">
-                                <input type="text" name="ingredients" id="ingredients_search" class="dropdown_search" placeholder="rechercher">
+                                <div class="dropdown_input_wrapper">
+                                    <input type="text" name="ingredients" id="ingredients_search"
+                                        class="dropdown_search" placeholder="">
+                                    <span class="icon_dropdown_clear icon_clear"><i
+                                            class="fa-solid fa-xmark"></i></span>
+                                    <span class="icon_dropdown"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                </div>
                                 <ul id="ingredients_container" class="dropdown_list"></ul>
                             </div>
                         </div>
                         <div class="dropdown_wrapper">
                             <button class="dropdown">Appareils<i class="fa-solid fa-chevron-down"></i></button>
-                           <div class="dropdown_list_container">
-                            <input type="text" name="appliances" id="appliances_search" class="dropdown_search" placeholder="rechercher">
-                            <ul id="appliances_container" class="dropdown_list"></ul>
-                           </div>
+                            <div class="dropdown_list_container">
+                                <div class="dropdown_input_wrapper">
+                                    <input type="text" name="appliances" id="appliances_search" class="dropdown_search"
+                                        placeholder="">
+                                    <span class="icon_dropdown_clear icon_clear"><i
+                                            class="fa-solid fa-xmark"></i></span>
+                                    <span class="icon_dropdown"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                </div>
+                                <ul id="appliances_container" class="dropdown_list"></ul>
+                            </div>
                         </div>
-                         <div class="dropdown_wrapper">
+                        <div class="dropdown_wrapper">
                             <button class="dropdown">Ustensiles<i class="fa-solid fa-chevron-down"></i></button>
                             <div class="dropdown_list_container">
-                                <input type="text" name="ustensils" id="ustensils_search" class="dropdown_search" placeholder="rechercher">
+                                <div class="dropdown_input_wrapper">
+                                    <input type="text" name="ustensils" id="ustensils_search" class="dropdown_search"
+                                        placeholder="">
+                                    <span class="icon_dropdown_clear icon_clear"><i
+                                            class="fa-solid fa-xmark"></i></span>
+                                    <span class="icon_dropdown"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                </div>
                                 <ul id="ustensils_container" class="dropdown_list"></ul>
                             </div>
                         </div>
@@ -51,16 +75,16 @@
                         <span id="number">50</span> Recettes
                     </div>
                 </div>
-                    <div class="labels_container">
-                </div>
+                <div class="labels_container"></div>
             </section>
-            <section id="recipes_card_container">
-            </section>
-        </main>
-        <footer>
+            <section id="recipes_card_container"></section>
+        </div>
+    </main>
+    <footer>
 
-        </footer>
-        <script src="scripts/pages/index.js"></script>
-        <script src="scripts/factories/recipes.js"></script>
-    </body>
+    </footer>
+    <script src="scripts/pages/index.js"></script>
+    <script src="scripts/factories/recipes.js"></script>
+</body>
+
 </html>
