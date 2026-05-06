@@ -1,5 +1,8 @@
 let selectedFilters = [];
 let allRecipes = [];
+let ingredientsList = [];
+let appliancesList = [];
+let ustensilsList = [];
 
 // Récupération des recettes
 async function getRecipes() {
@@ -41,15 +44,21 @@ function displayData(recipes) {
 function renderNoResultsRecipes(searchTerm) {
     const recipesContainer = document.getElementById("recipes_card_container");
 
-    recipesContainer.innerHTML = `<p class="no_results">
-        Aucune recette ne contient "${searchTerm}".<br>
-        Vous pouvez chercher "tarte aux pommes", "poisson", etc.</p>`;
+    const p = document.createElement("p");
+    p.className = "no_results";
+    p.textContent = `Aucune recette ne contient "${searchTerm}". Vous pouvez chercher "tarte aux pommes", "poisson", etc.`;
+
+    recipesContainer.innerHTML = "";
+    recipesContainer.appendChild(p);
 }
 
 // Applique la recherche de l'utilisateur et filtres sélectionnés
 function applyFilters() {
     const searchInput = document.getElementById("search");
-    const searchTerm = searchInput.value.trim().toLowerCase();
+    let searchTerm = searchInput.value.trim().toLowerCase();
+    const REGEX = /[^a-zA-Z0-9À-ÿ\s'-]/g;
+
+    searchTerm = searchTerm.replace(REGEX, "");
 
     let filteredRecipes = allRecipes;
 
@@ -98,7 +107,7 @@ function applyFilters() {
     if (filteredRecipes.length === 0) {
         renderNoResultsRecipes(searchTerm);
         updateRecipesCounter(filteredRecipes);
-        updateFiltersRecipes(filteredRecipes);
+        updateFiltersRecipes(allRecipes);
     } else {
         displayData(filteredRecipes);
     }
@@ -215,11 +224,17 @@ function initDropdowns() {
             const wrapper = btn.closest(".dropdown_wrapper");
             const dropdownListContainer = wrapper.querySelector(".dropdown_list_container");
 
-            const  isDropdownOpen = dropdownListContainer.classList.contains("open");
+            const isDropdownOpen = dropdownListContainer.classList.contains("open");
 
-            document.querySelectorAll(".dropdown_list_container").forEach(list => list.classList.remove("open"));
+            document.querySelectorAll(".dropdown_list_container").forEach(list => {
+                list.classList.remove("open");
+                list.closest(".dropdown_wrapper").querySelector(".dropdown").classList.remove("active");
+            });
 
-            if (!isDropdownOpen) dropdownListContainer.classList.add("open");
+             if (!isDropdownOpen) {
+                dropdownListContainer.classList.add("open");
+                btn.classList.add("active");
+             }
         });
     });
 }
